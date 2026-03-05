@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About This Project</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+    <div id="sidebar" class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="/admin/home.html" title="Dashboard"><span class="icon">🏠</span><span class="text">Dashboard</span></a></li>
+        <li><a href="/admin/staff/staff.html" title="Staff"><span class="icon">👥</span><span class="text">Staff</span></a></li>
+        <li><a href="/admin/admins/admin.html" title="Admin"><span class="icon">🔐</span><span class="text">Admin</span></a></li>
+        <li><a href="/admin/reports/report.html" title="Reports"><span class="icon">📊</span><span class="text">Reports</span></a></li>
+        <li><a href="/admin/settings/settings.html" title="Settings"><span class="icon">⚙</span><span class="text">Settings</span></a></li>
+        <li><a href="/admin/history/history.html" title="History"><span class="icon">📜</span><span class="text">History</span></a></li>
+        <li><a href="/admin/about/about.html" title="About"><span class="icon">ℹ</span><span class="text">About</span></a></li>
+        <li><a href="#" onclick="logout()" title="Logout"><span class="icon">🚪</span><span class="text">Logout</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="container">
+    <section class="about-section">
+      <h1>About This Project</h1>
+      <p>
+        This project is a web-based parking management system. It allows users to allocate and remove parking slots efficiently. The system supports multiple roles including staff and admin users for better management.
+      </p>
+      <p>
+        The admin panel provides secure access for management tasks, while the staff page allows day-to-day operation handling. This page will be updated with more details soon.
+      </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Vehicle slot allocation and removal</li>
+        <li>Staff management with secure login</li>
+        <li>Admin control with password protection</li>
+        <li>Real-time dashboard and history tracking</li>
+      </ul>
+      <p class="note">More content about the project will be added here shortly.</p>
+    </section>
+  </main>
+   <script>
+    function logout() {
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>

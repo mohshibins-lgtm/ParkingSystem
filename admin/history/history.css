@@ -1,0 +1,178 @@
+/* Reset & Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  background: #f9f9fb;
+  color: #222;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #2a9d8f;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+.filters label {
+  font-weight: 600;
+}
+
+.filters input[type="date"] {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s;
+}
+
+.filters input[type="date"]:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+.filters button {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+}
+
+.filters button:hover {
+  background-color: #21867a;
+}
+
+.filter-status {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Table */
+.history-table {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 700px;
+}
+
+th, td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+}
+
+th {
+  background-color: #2a9d8f;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+tr:hover {
+  background-color: #f1fcfb;
+}
+
+td {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+input[type="date"] {
+  padding: 7px 8px;
+  min-width: 160px; /* adjust as needed for full date picker visibility */
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+}
+
+input[type="date"]:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 1px; /* Collapsed width */
+  background-color: #2a5298;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 180px; /* Expanded width when hovered */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #21867a;
+  border-radius: 6px;
+}

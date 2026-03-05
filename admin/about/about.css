@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.container {
+  background: white;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.about-section h1 {
+  font-size: 2.8rem;
+  color: #2a9d8f;
+  margin-bottom: 20px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #264653;
+  margin: 25px 0 15px 0;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.about-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.note {
+  font-style: italic;
+  color: #888;
+  margin-top: 40px;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 1px; /* Collapsed width */
+  background-color: #2a5298;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 180px; /* Expanded width when hovered */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}

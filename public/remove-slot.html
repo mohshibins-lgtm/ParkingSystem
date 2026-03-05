@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remove Slot</title>
+  <link rel="stylesheet" href="remove-slot.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Checkout</h1>
+    
+    <!-- ✅ FIXED FORM -->
+    <form id="exitForm">
+      <div class="input-section">
+        <input type="text" id="slotName" placeholder="SLOT NAME" maxlength="10" >
+        <button type="submit">Checkout</button>
+
+      </div>
+        <button id="logoutBtn">Logout</button>
+
+    </form>
+    
+    <!-- ✅ Message Display -->
+    <div id="message" style="color: green; margin-top: 10px; font-weight: bold;"></div>
+
+    <!-- ✅ Modal (NO FORM INSIDE) -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        
+        <div class="vehicle-details">
+          <h2>Vehicle Checkout Details</h2>
+          
+          <div class="detail-row">
+            <label>Slot Number:</label> <span id="slotNumber">-</span>
+          </div>
+          <div class="detail-row">
+            <label>Vehicle Number:</label> <span id="vehicleNumber">-</span>
+          </div>
+          <div class="detail-row">
+            <label>Entry Time:</label> <span id="entryTime">-</span>
+          </div>
+          <div class="detail-row">
+            <label>Exit Time:</label> <span id="exitTime">-</span>
+          </div>
+          <div class="detail-row">
+            <label>Total Time:</label> <span id="totalTime">-</span>
+          </div>
+          <div class="detail-row amount-row">
+            <label>Total Amount:</label> <span id="totalAmount">₹0</span>
+          </div>
+          
+          <div class="payment-section">
+            <h3>Payment Method</h3>
+            <div class="payment-buttons">
+              <button class="payment-btn" id="upiBtn">💳 UPI</button>
+              <button class="payment-btn" id="cashBtn">💵 CASH</button>
+            </div>
+            <button class="proceed-btn" id="proceedBtn" disabled>Proceed Checkout</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ✅ ONLY script.js (your existing file) -->
+  <script src="script.js"></script>
+</body>
+</html>

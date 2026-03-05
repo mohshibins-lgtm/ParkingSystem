@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add New Staff - Parking System</title>
+  <link rel="stylesheet" href="add-staff.css" />
+</head>
+<body>
+ 
+
+  <main>
+     <header>
+    <h1>Add New Staff</h1>
+  </header>
+    <form id="addStaffForm" class="staff-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18" max="100" required />
+
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="joinedDate">Joined Date:</label>
+      <input type="date" id="joinedDate" name="joinedDate" required />
+
+      <button type="submit" class="btn-submit">Add Staff</button>
+    </form>
+
+    <p id="message" class="message"></p>
+    <button onclick="window.location.href='/admin/staff/staff.html'" class="btn-back">Back to Staff List</button>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('addStaffForm');
+      const message = document.getElementById('message');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: form.name.value.trim(),
+          age: parseInt(form.age.value, 10),
+          place: form.place.value.trim(),
+          gender: form.gender.value,
+          password: form.password.value,
+          joinedDate: form.joinedDate.value
+        };
+
+        // Basic validation (additional validation encouraged)
+        if (!formData.name || !formData.place || !formData.gender || !formData.password || !formData.joinedDate) {
+          message.textContent = 'Please fill in all fields.';
+          message.style.color = "red";
+          return;
+        }
+
+        try {
+          const response = await fetch('/api/staff', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+          const result = await response.json();
+
+          if (response.ok) {
+            message.style.color = "green";
+            message.textContent = 'Staff added successfully! Redirecting to staff list...';
+            setTimeout(() => window.location.href = '/admin/staff/staff.html', 2000);
+          } else {
+            message.style.color = "red";
+            message.textContent = result.message || 'Failed to add staff.';
+          }
+        } catch (error) {
+          message.style.color = "red";
+          message.textContent = 'Error occurred while adding staff.';
+          console.error(error);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

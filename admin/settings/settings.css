@@ -1,0 +1,137 @@
+/* Prevent scrolling and center container */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* disable scroll */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  /* Remove padding to avoid scroll */
+  padding: 0;
+}
+
+.container {
+  background: white;
+  max-width: 480px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  /* Remove any margin */
+  margin: 0;
+}
+
+h1 {
+  color: #2a9d8f;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-row label {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s;
+}
+
+.form-row input:focus {
+  border-color: #2a9d8f;
+}
+
+button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #2a9d8f;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgb(42 157 143 / 0.3);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e7269;
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: green;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 1px; /* Collapsed width */
+  background-color: #2a5298;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 180px; /* Expanded width when hovered */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #21867a;
+  border-radius: 6px;
+}

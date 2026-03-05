@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Staff List - Parking System</title>
+  <link rel="stylesheet" href="staff.css" />
+</head>
+<body>
+  <header>
+    <h1>Staff List</h1>
+  </header>
+
+  <div id="sidebar" class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="/admin/home.html" title="Dashboard"><span class="icon">🏠</span><span class="text">Dashboard</span></a></li>
+        <li><a href="/admin/staff/staff.html" title="Staff"><span class="icon">👥</span><span class="text">Staff</span></a></li>
+        <li><a href="/admin/admins/admin.html" title="Admin"><span class="icon">🔐</span><span class="text">Admin</span></a></li>
+        <li><a href="reports.html" title="Reports"><span class="icon">📊</span><span class="text">Reports</span></a></li>
+        <li><a href="settings.html" title="Settings"><span class="icon">⚙</span><span class="text">Settings</span></a></li>
+        <li><a href="/admin/history/history.html" title="History"><span class="icon">📜</span><span class="text">History</span></a></li>
+        <li><a href="/admin/about/about.html" title="About"><span class="icon">ℹ</span><span class="text">About</span></a></li>
+        <li><a href="#" onclick="logout()" title="Logout"><span class="icon">🚪</span><span class="text">Logout</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <table id="staffTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="staffTableBody">
+        <tr><td colspan="3" class="loading">Loading staff data...</td></tr>
+      </tbody>
+    </table>
+
+    <a href="/admin/add-staff/add-staff.html"><button id="addStaffBtn">Add New Staff</button></a>
+  </main>
+
+  <script src="staff.js" defer></script>
+  <script>
+    function logout() {
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h1>🔐 Parking Login</h1>
+      <p class="subtitle">Please log in to continue</p>
+
+      <form id="loginform">
+    <input type="text" placeholder="Username" id="username" required>
+    <input type="password" placeholder="Password" id="password" required>
+
+    <label>
+        <input type="checkbox" id="entrypage"> Check In Station
+    </label>
+    <label>
+        <input type="checkbox" id="exitpage"> Check Out Station
+    </label>
+
+    <button class="btn" type="submit">Login</button>
+
+    <button id="adminBtn" class="admin-btn" type="button">Admin</button>
+    <p id="adminError" class="error-message" style="color: red; text-align:center; margin-top: 10px;"></p>
+</form>
+
+    </div>
+  </div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

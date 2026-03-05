@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #2a9d8f;
+  margin-bottom: 30px;
+}
+
+.input-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  
+}
+input::placeholder{
+  font-weight: 550;
+  color: grey;
+}
+
+#slotInput {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+#slotInput:focus {
+  border-color: #2a9d8f;
+}
+
+button {
+  padding: 12px 24px;
+  background: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #1e7269;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.vehicle-details h2 {
+  color: #2a9d8f;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-row span {
+  font-weight: 500;
+  color: #333;
+}
+
+.amount-row {
+  background: #f0f8ff;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.amount-row span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e74c3c !important;
+}
+
+.payment-section {
+  margin: 25px 0;
+}
+
+.payment-section h3 {
+  color: #555;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.payment-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.payment-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.payment-btn.selected {
+  border-color: #2a9d8f;
+  background: #2a9d8f;
+  color: white;
+}
+
+.proceed-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
+
+.payment-btn.selected {
+  border-color: #2a9d8f;
+  background: #2a9d8f;
+  color: white;
+}
+
+.proceed-btn {
+  width: 100%;
+  padding: 15px;
+  background: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.proceed-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.logoutBtn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 2px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}

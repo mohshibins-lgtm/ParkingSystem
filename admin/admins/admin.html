@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Settings</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="/admin/home.html" title="Dashboard"><span class="icon">🏠</span><span class="text">Dashboard</span></a></li>
+        <li><a href="/admin/staff/staff.html" title="Staff"><span class="icon">👥</span><span class="text">Staff</span></a></li>
+        <li><a href="/admin/admins/admin.html" title="Admin"><span class="icon">🔐</span><span class="text">Admin</span></a></li>
+        <li><a href="/admin/reports/report.html" title="Reports"><span class="icon">📊</span><span class="text">Reports</span></a></li>
+        <li><a href="/admin/settings/settings.html" title="Settings"><span class="icon">⚙</span><span class="text">Settings</span></a></li>
+        <li><a href="/admin/history/history.html" title="History"><span class="icon">📜</span><span class="text">History</span></a></li>
+        <li><a href="/admin/about/about.html" title="About"><span class="icon">ℹ</span><span class="text">About</span></a></li>
+        <li><a href="#" onclick="logout()" title="Logout"><span class="icon">🚪</span><span class="text">Logout</span></a></li>
+      </ul>
+    </nav>
+  </div>
+    
+  <main class="container">
+    <h1>Admin Settings</h1>
+
+    <div class="current-info">
+      <h2>Current Admin Info</h2>
+      <p><strong>Name:</strong> <span id="currentName">Loading...</span></p>
+        </div>
+
+    <form id="changeNameForm" class="change-form">
+      <h3>Change Admin Name</h3>
+      <input type="text" id="newName" placeholder="New Admin Name"  />
+      <button type="submit">Update Name</button>
+    </form>
+
+    <form id="changePasswordForm" class="change-form">
+      <h3>Change Admin Password</h3>
+      <input type="password" id="newPassword" placeholder="New Password" required />
+      <button type="submit">Update Password</button>
+    </form>
+
+    <p id="message" class="message"></p>
+  </main>
+
+  <script src="admins.js" defer></script>
+  <script>
+    function logout() {
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>

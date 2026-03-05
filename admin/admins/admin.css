@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #222;
+}
+
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  max-width: 420px;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  color: #2a9d8f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.current-info p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.change-form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.change-form input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  margin-bottom: 15px;
+  outline-offset: 2px;
+  transition: border-color 0.3s;
+}
+
+.change-form input:focus {
+  border-color: #2a9d8f;
+  outline: none;
+}
+
+.change-form button {
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgb(42 157 143 / 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.change-form button:hover {
+  background-color: #1e7269;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: green;
+  text-align: center;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 1px; /* Collapsed width */
+  background-color: #2a5298;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 180px; /* Expanded width when hovered */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}

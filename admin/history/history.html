@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parking History</title>
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <header>
+    <h1>Parking History</h1>
+  </header>
+
+  <div id="sidebar" class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="/admin/home.html" title="Dashboard"><span class="icon">🏠</span><span class="text">Dashboard</span></a></li>
+        <li><a href="/admin/staff/staff.html" title="Staff"><span class="icon">👥</span><span class="text">Staff</span></a></li>
+        <li><a href="/admin/admins/admin.html" title="Admin"><span class="icon">🔐</span><span class="text">Admin</span></a></li>
+        <li><a href="/admin/reports/report.html" title="Reports"><span class="icon">📊</span><span class="text">Reports</span></a></li>
+        <li><a href="/admin/settings/settings.html" title="Settings"><span class="icon">⚙</span><span class="text">Settings</span></a></li>
+        <li><a href="/admin/history/history.html" title="History"><span class="icon">📜</span><span class="text">History</span></a></li>
+        <li><a href="/admin/about/about.html" title="About"><span class="icon">ℹ</span><span class="text">About</span></a></li>
+        <li><a href="#" onclick="logout()" title="Logout"><span class="icon">🚪</span><span class="text">Logout</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <section class="filters">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" title="Select start date" />
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" title="Select end date" />
+
+    <button id="filterBtn">Filter</button>
+    <button id="clearBtn">Show All</button>
+
+    <p id="filterStatus" class="filter-status"></p>
+  </section>
+
+  <section class="history-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Slot Name</th>
+          <th>Vehicle Number</th>
+          <th>Date</th>
+          <th>Total Time</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+        <tr><td colspan="4" style="text-align:center;">Loading...</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <script src="history.js" defer></script>
+
+   <script>
+    function logout() {
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>

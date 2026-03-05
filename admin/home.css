@@ -1,0 +1,157 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f6;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  
+}
+
+header {
+  background: #2a5298;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-box h2 {
+  margin: 0;
+  font-size: 40px;
+  color: #2a5298;
+}
+
+.stat-box p {
+  margin: 5px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+th {
+  background-color: #2a5298;
+  color: white;
+  font-weight: bold;
+}
+
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logout-btn:hover {
+  background-color: #d62c3c;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 1px; /* Collapsed width */
+  background-color: #2a5298;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 180px; /* Expanded width when hovered */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #21867a;
+  border-radius: 6px;
+}
+
+/* Adjust page padding to prevent content under sidebar */
+body {
+  padding-left: 50px; /* same as collapsed sidebar width */
+  transition: padding-left 0.3s ease;
+}
+
+.sidebar:hover ~ body {
+  padding-left: 180px;
+}
