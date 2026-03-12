@@ -342,10 +342,10 @@ function showAdminLogin() {
       if (res.ok && result.success) {
         window.location.href = "/admin/home.html";
       } else {
-        errorDiv.textContent = "❌ Wrong password";
+        errorDiv.textContent = " Wrong password";
       }
     } catch (err) {
-      errorDiv.textContent = "❌ Network error";
+      errorDiv.textContent = " Network error";
     }
   };
   

@@ -9,7 +9,6 @@ router.post('/', async (req, res) => {
     const { slotName } = req.body;
     const cleanSlotName = slotName.trim().toLowerCase();
 
-    // ✅ Settings
     let settings = await Settings.findOne();
     if (!settings) {
       settings = new Settings({
@@ -20,7 +19,6 @@ router.post('/', async (req, res) => {
       await settings.save();
     }
 
-    // ✅ Find slot with vehicle
     const slot = await Slot.findOne({ 
       slotName: cleanSlotName,
       vehicleNumber: { $ne: null, $exists: true }
@@ -32,7 +30,7 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // ✅ CALCULATE BILL
+    
     const now = new Date();
     const entryTime = new Date(slot.entryTime);
     const durationMs = now - entryTime;
@@ -49,7 +47,6 @@ router.post('/', async (req, res) => {
     const vehicleNumber = slot.vehicleNumber;
     const duration = `${Math.floor(totalHours)}h ${Math.round((totalHours % 1) * 60)}m`;
 
-    // ✅ SAVE TO CHECKOUT HISTORY
     const checkoutRecord = new Checkout({
       slotName: cleanSlotName,
       vehicleNumber: vehicleNumber,
@@ -62,16 +59,16 @@ router.post('/', async (req, res) => {
     });
     await checkoutRecord.save();
 
-    // ✅ CLEAR SLOT FIRST
+    
     slot.vehicleNumber = null;
     slot.entryTime = null;
     slot.status = 'free';
     await slot.save();
 
-    // ✅ SEND TO ARDUINO (SAME AS ALLOCATE-SLOT!)
+    
     const arduino = req.app.locals.arduino;
     if (arduino && arduino.writable) {
-      arduino.write('FREE');  // ← FIXED! Send FREE for checkout
+      arduino.write('FREE');  
       console.log(`📡 Arduino: Slot ${cleanSlotName} FREE`);
     }
 

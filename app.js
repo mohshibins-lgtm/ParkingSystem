@@ -134,10 +134,7 @@ arduino.on('data', (data) => {
     console.error(" Sync Error:", err.message);
   }
       await syncDatabaseWithSensor();
-
 }
-
-
           console.log(' Updated Sensor Status:', sensorStatus);
         }
 
